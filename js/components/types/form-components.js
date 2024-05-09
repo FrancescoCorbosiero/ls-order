@@ -1,6 +1,6 @@
 import { ADDRESS_TEXTFIELD_ID, POSTALCODE_TEXTFIELD_ID, CITY_TEXTFIELD_ID, COMPANY_TEXTFIELD_ID, EMAIL_TEXTFIELD_ID, REGISTRATION_FORM_ID, PENDING_FORM_ID, PHONE_TEXTFIELD_ID, PROVINCE_TEXTFIELD_ID, START_FORM_ID, CONFIRM_DATA_FORM_ID as CONFIRM_DATA_FORM_ID, REGISTRATION_EMAIL_SENT_FORM_ID, HOURGLASS_EMPTY_ICON, BOUCE_IN_RIGHT_ANIMATION_CLASS, ORDER_FORM_ID, PACKAGE_QUANTITY_TEXTFIELD_ID, EPAL_QUANTITY_TEXTFIELD_ID, PACKAGE_WEIGHT_TEXTFIELD_ID, PACKAGE_VOLUME_TEXTFIELD_ID, PALLET_DATA_DIALOG_ID, PALLET_OPEN_DIALOG_BUTTON_ID, BUTTON_ROUNDED, PALLET_LIST_DIV_ID, DELIVERY_DOCUMENT_TEXTFIELD_ID, PALLET_OVERALL_WEIGTH_ID, PALLET_OVERALL_VOLUME_ID, ORDER_NOTES_TEXTAREA_ID, RECIPIENT_FORM_ID, ORDER_EMAIL_SENT_FORM_ID, BUTTON_STANDARD, SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, SERVICE_DROPDOWN_ID, SERVICE_TYPE_ATTRIBUTE_ID } from "../../constant/costant.js";
 import { language } from "../../constant/language-messages.js";
-import { MAIL_SVG } from "../../constant/svg.js";
+import { MAIL_SVG, OK_SVG } from "../../constant/svg.js";
 import { openPalletDialog, openSelectableDropdown } from "../../function/component-handler.js";
 import { createFunctionButton } from "./button-component.js";
 import { createPalletDialog } from "./dialog-components.js";
@@ -56,7 +56,7 @@ export function getEmailSentFormHtml(id, text){
                 ${createFormTitleDiv(text)}
                 
                 <div class="p-5 row justify-content-md-center">
-                    ${createAnimatedSvgIcon(MAIL_SVG, BOUCE_IN_RIGHT_ANIMATION_CLASS)}
+                    ${createAnimatedSvgIcon(OK_SVG, BOUCE_IN_RIGHT_ANIMATION_CLASS)}
                 </div>
             </div>
             `;
