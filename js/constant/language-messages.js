@@ -7,7 +7,7 @@ const jsonMessagesItalian = {
     emailFormText: "Inserisci email",
     confirmDataFormText: "Per confermare i dati inseriti clicca nuovamente il pulsante 'Avanti' ",
     registrationEmailSentFormText: "Ci siamo quasi, per completare la registrazione segui le istruzioni contenute nella mail che ti abbiamo mandato",
-    orderEmailSentFormText: "Ci siamo quasi, per completare l'ordine segui le istruzioni contenute nella mail che ti abbiamo mandato",
+    orderEmailSentFormText: "Il tuo ordine è stato inoltrato correttamente! Ti preghiamo di attendere la conferma via email dal nostro centro logistico. Grazie per aver scelto Sanchez Logistica!",
 
     //Units
     weightUnit: "kg",
