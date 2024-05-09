@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+      <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="js/external/bootstrap.css">
+      <link rel="stylesheet" href="js/external/material-components-web.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="style.css">
+      <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+      
+      <script src="js/external/material-components-web.min.js"></script>
+      <script src="js/external/bootstrap.js"></script>
+      <script src="js/external/jquery-3.6.0.js"></script>
+      <script src="main.js" type="module"></script>
+  </head>
+  <body>
+
+      <!-- BAR -->
+      <header class="mdc-top-app-bar">
+          <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+              <span id="logo-id" class="mdc-top-app-bar__title"></span>
+            </section>
+          </div>
+      </header>
+      <main id="app-id" class="mdc-top-app-bar--fixed-adjust">
+          <!-- FORM -->
+
+          <div id="form-id" class="container text-center">
+
+          </div>
+
+          <!-- NAVIGATION BUTTONS -->
+
+          <div class="ms-3 pb-3 position-fixed bottom-0 start-0">
+            <button id="prev-step-button-id" class="mdc-fab mdc-fab--extended me-4">
+                <div class="mdc-fab__ripple"></div>
+                <span id="prev-step-button-icon-id" class="material-icons mdc-fab__icon">arrow_back_ios</span>
+            </button>
+          </div>
+
+          <div class="me-3 pb-3 position-fixed bottom-0 end-0">
+            <button id="next-step-button-id" class="mdc-fab mdc-fab--extended">
+                <div class="mdc-fab__ripple"></div>
+                <span id="next-step-button-icon-id" class="material-icons mdc-fab__icon">arrow_forward_ios</span>
+            </button>
+          </div>
+
+      </main>
+
+  </body>
+</html>
