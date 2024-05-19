@@ -31,7 +31,7 @@ const jsonMessagesItalian = {
         palletWidhtPlaceHolder: `Larghezza (cm)`,
         palletQuantityPlaceHolder: "Quantità",
         //Delivery
-        deliveryDocumentPlaceHolder: "Documento di trasporto",
+        deliveryDocumentPlaceHolder: "Documento di trasporto (facoltativo)",
         orderNotesPlaceHolder: "Note (facoltativo)",
 
         //User

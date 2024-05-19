@@ -3,6 +3,7 @@ import { getPalletData as getPalletJsonDataObject } from "../components/data/pal
 import { addPalletToUserData, userData } from "../components/data/user-data.js";
 import { ADDRESS_TEXTFIELD_ID, CITY_TEXTFIELD_ID, COMPANY_TEXTFIELD_ID, DELIVERY_DOCUMENT_TEXTFIELD_ID, EMAIL_TEXTFIELD_ID, EPAL_QUANTITY_TEXTFIELD_ID, ORDER_NOTES_TEXTAREA_ID, PACKAGE_QUANTITY_TEXTFIELD_ID, PACKAGE_VOLUME_TEXTFIELD_ID, PACKAGE_WEIGHT_TEXTFIELD_ID, PALLET_HEIGHT_TEXTFIELD_ID, PALLET_LENGHT_TEXTFIELD_ID, PALLET_OPEN_DROPDOWN_TYPE_BUTTON_ID, PALLET_OVERALL_VOLUME_ID, PALLET_OVERALL_WEIGTH_ID, PALLET_QUANTITY_TEXTFIELD_ID, PALLET_TYPE_ATTRIBUTE_ID, PALLET_WEIGHT_TEXTFIELD_ID, PALLET_WIDTH_TEXTFIELD_ID, PHONE_TEXTFIELD_ID, POSTALCODE_TEXTFIELD_ID, PROVINCE_TEXTFIELD_ID, SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, SERVICE_TYPE_ATTRIBUTE_ID } from "../constant/costant.js";
 import { palletTypeMapper } from "../mapper/data-mapper.js";
+import { isNullOrEmpty, hasContent } from "../utility/string-util.js";
 
 export function saveEmail(){
     userData.email = getMdComponent(EMAIL_TEXTFIELD_ID).value;
@@ -20,6 +21,9 @@ export function getPalletData(){
     let palletQuantity = getMdComponent(PALLET_QUANTITY_TEXTFIELD_ID).value;
 
     let palletTypeId = document.getElementById(PALLET_OPEN_DROPDOWN_TYPE_BUTTON_ID).getAttribute(PALLET_TYPE_ATTRIBUTE_ID);
+    if(!palletTypeId){
+        palletTypeId = 1;   // Generic pallet
+    }
     
     //TODO adapt the logic to the ENUM
     let palletTypeName = palletTypeMapper.get(palletTypeId);
@@ -48,7 +52,14 @@ export function getPalletData(){
 
 export function saveOrderData(){
     userData.deliveryDocument = getMdComponent(DELIVERY_DOCUMENT_TEXTFIELD_ID).value;
+    if(isNullOrEmpty(userData.deliveryDocument)){
+        userData.deliveryDocument = null;
+    }
     userData.serviceType = document.getElementById(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID).getAttribute(SERVICE_TYPE_ATTRIBUTE_ID);
+    if(isNullOrEmpty(userData.serviceType)){
+        userData.serviceType = 1;   // Nessun servizio accessorio
+    }
+
     //Optional
     userData.packageQuantity = getMdComponent(PACKAGE_QUANTITY_TEXTFIELD_ID).value;
     userData.orderNotes = getMdComponent(ORDER_NOTES_TEXTAREA_ID).value;

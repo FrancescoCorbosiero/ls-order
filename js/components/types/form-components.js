@@ -54,6 +54,17 @@ export function getOrderEmailSentFormHtml(){
 export function getEmailSentFormHtml(id, text){
     return `<div id="${id}" >
                 ${createFormTitleDiv(text)}
+
+                <div class="p-5 row justify-content-md-center">
+                    ${createAnimatedSvgIcon(OK_SVG, BOUCE_IN_RIGHT_ANIMATION_CLASS)}
+                </div>
+            </div>
+            `;
+}
+
+export function getEmailConfirmationSentFormHtml(id, text){
+    return `<div id="${id}" >
+                ${createFormTitleDiv(text)}
                 
                 <div class="p-5 row justify-content-md-center">
                     ${createAnimatedSvgIcon(OK_SVG, BOUCE_IN_RIGHT_ANIMATION_CLASS)}

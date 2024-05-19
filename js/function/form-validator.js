@@ -67,6 +67,7 @@ export function isRecipientFormValid(){
     return true;
 }
 
+//TODO: check
 export function isOrderFormValid(){
     //let formNotValid = isFormValidWithRegex(ORDER_FORM_ID, ONLY_NUMBERS_REGEX);
 
@@ -82,14 +83,14 @@ export function isOrderFormValid(){
     }
 
     //REQUIRED
-    let deliveryDocumentTextField = getMdComponent(DELIVERY_DOCUMENT_TEXTFIELD_ID);
-    let deliveryDocumentNotValid = isTextFieldNullOrEmpty(DELIVERY_DOCUMENT_TEXTFIELD_ID, deliveryDocumentTextField);
+//    let deliveryDocumentTextField = getMdComponent(DELIVERY_DOCUMENT_TEXTFIELD_ID);
+//    let deliveryDocumentNotValid = isTextFieldNullOrEmpty(DELIVERY_DOCUMENT_TEXTFIELD_ID, deliveryDocumentTextField);
 
     let serviceType = document.getElementById(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID).getAttribute(SERVICE_TYPE_ATTRIBUTE_ID);
     let serviceTypeNotSelected = !serviceType;
     
     if(serviceTypeNotSelected){
-        playShakeErrorAnimation(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID);
+        // playShakeErrorAnimation(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID);
     }
 
     let noPalletInserted = userData.palletList.length > 0 ? false : true;
@@ -98,7 +99,7 @@ export function isOrderFormValid(){
         playShakeErrorAnimation(PALLET_OPEN_DIALOG_BUTTON_ID);
     }
 
-    let formNotValid = packageQuantityNotValid || deliveryDocumentNotValid || noPalletInserted;
+    let formNotValid = packageQuantityNotValid || noPalletInserted;
 
     if(formNotValid){
         return false;

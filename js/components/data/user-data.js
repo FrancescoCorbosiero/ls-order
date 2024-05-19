@@ -12,8 +12,8 @@ export const userData = {
     
     //Order
     packageQuantity: "",
-    deliveryDocument: "",
-    serviceType: "",
+    deliveryDocument: null,
+    serviceType: 1,
     orderNotes: "",
     
     palletList: [],
