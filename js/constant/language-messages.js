@@ -31,7 +31,7 @@ const jsonMessagesItalian = {
         palletWidhtPlaceHolder: `Larghezza (cm)`,
         palletQuantityPlaceHolder: "Quantità",
         //Delivery
-        deliveryDocumentPlaceHolder: "Documento di trasporto (facoltativo)",
+        deliveryDocumentPlaceHolder: "Documento di trasporto",
         orderNotesPlaceHolder: "Note (facoltativo)",
 
         //User
@@ -59,7 +59,7 @@ const jsonMessagesItalian = {
         palletDialogDataTitle: "Pallet",
 
     //PALLET TYPE
-        genericPallet: "Pallet Generico",
+        genericPallet: "Pallet Generico/Colli",
         epal: "Epal",
 
     //BUTTON
@@ -69,7 +69,7 @@ const jsonMessagesItalian = {
         //Service
         serviceOpenDropdownText: "Seleziona servizio",
         //Pallet
-        palletOpenDialogButtonText: "Aggiungi Pallet",
+        palletOpenDialogButtonText: "Aggiungi Pallet/Colli",
         palletOpenDropdownTypeText: "Tipo Pallet"
 }
 

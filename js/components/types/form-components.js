@@ -58,6 +58,9 @@ export function getEmailSentFormHtml(id, text){
                 <div class="p-5 row justify-content-md-center">
                     ${createAnimatedSvgIcon(OK_SVG, BOUCE_IN_RIGHT_ANIMATION_CLASS)}
                 </div>
+                <br>
+                <br>
+                <a href="index.html" class="redirect-button">Effettua un nuovo ordine</a>
             </div>
             `;
 }
@@ -69,10 +72,6 @@ export function getEmailConfirmationSentFormHtml(id, text){
                 <div class="p-5 row justify-content-md-center">
                     ${createAnimatedSvgIcon(OK_SVG, BOUCE_IN_RIGHT_ANIMATION_CLASS)}
                 </div>
-
-                <br>
-                <br>
-                <a href="index.html" class="redirect-button">Effettua un nuovo ordine</a>
             </div>
             `;
 }

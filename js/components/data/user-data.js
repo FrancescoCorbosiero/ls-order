@@ -13,8 +13,7 @@ export const userData = {
     //Order
     packageQuantity: "",
     deliveryDocument: null,
-    serviceType: 1,
-    orderNotes: "",
+    serviceType: 0,
     
     palletList: [],
     orderVolume: 0.00,

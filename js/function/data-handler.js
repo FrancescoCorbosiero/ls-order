@@ -57,7 +57,7 @@ export function saveOrderData(){
     }
     userData.serviceType = document.getElementById(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID).getAttribute(SERVICE_TYPE_ATTRIBUTE_ID);
     if(isNullOrEmpty(userData.serviceType)){
-        userData.serviceType = 1;   // Nessun servizio accessorio
+        userData.serviceType = 0;   // Nessun servizio accessorio
     }
 
     //Optional

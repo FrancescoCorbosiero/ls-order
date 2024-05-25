@@ -83,8 +83,8 @@ export function isOrderFormValid(){
     }
 
     //REQUIRED
-//    let deliveryDocumentTextField = getMdComponent(DELIVERY_DOCUMENT_TEXTFIELD_ID);
-//    let deliveryDocumentNotValid = isTextFieldNullOrEmpty(DELIVERY_DOCUMENT_TEXTFIELD_ID, deliveryDocumentTextField);
+    let deliveryDocumentTextField = getMdComponent(DELIVERY_DOCUMENT_TEXTFIELD_ID);
+    let deliveryDocumentNotValid = isTextFieldNullOrEmpty(DELIVERY_DOCUMENT_TEXTFIELD_ID, deliveryDocumentTextField);
 
     let serviceType = document.getElementById(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID).getAttribute(SERVICE_TYPE_ATTRIBUTE_ID);
     let serviceTypeNotSelected = !serviceType;
