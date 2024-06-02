@@ -36,12 +36,12 @@ const jsonMessagesItalian = {
 
         //User
         emailPlaceHolder:  "Email",
-        companyPlaceHolder: "Ragione Sociale",
+        companyPlaceHolder: "Ragione Sociale/Nominativo",
         addressPlaceHolder: "Via",
         provincePlaceHolder: "Provincia",
         cityPlaceHolder: "Città",
         postalCodePlaceHolder: "CAP",
-        phoneNumberPlaceHolder: "Telefono",
+        phoneNumberPlaceHolder: "Telefono(Facoltativo)",
 
     //DIALOG
         dialogConfirm: "Conferma",

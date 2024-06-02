@@ -20,7 +20,12 @@ export function getStartRegistrationFormHtml(){
                     <div class="col">
                         <!-- TEXT-FIELD -->
                         ${createTextField(EMAIL_TEXTFIELD_ID, language.emailPlaceHolder, 75)}
-                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h1 style="font-size:15px"> Assicurati di aver inserito la mail corretta. Se sei già registrato NON è necessario ripetere la registrazione.</h1>
                 </div>
             </div>
             `;
@@ -139,41 +144,6 @@ export function getOrderFormHtml(){
     return `<div id="${ORDER_FORM_ID}" >
                 ${createFormTitleDiv(language.orderFormText)}
 
-                <div class="p-1 row justify-content-center">
-                    <div class="col align-self-center">
-                        ${createFormTextField(DELIVERY_DOCUMENT_TEXTFIELD_ID, language.deliveryDocumentPlaceHolder)}
-                    </div>
-                </div>
-
-                <div class="p-1 row justify-content-center">
-                    <div class="col align-self-center">
-                        ${createFormTextField(PACKAGE_QUANTITY_TEXTFIELD_ID, language.packageQuantityPlaceHolder)}
-                    </div>
-                </div>
-
-                <div class="p-1 row justify-content-center">
-                    <div class="col align-self-center">
-                        ${createFormTextField(ORDER_NOTES_TEXTAREA_ID, language.orderNotesPlaceHolder)}
-                    </div>
-                </div>
-
-                <div class="p-1 row justify-content-center">
-                    <div class="col align-self-center">
-                        <div id="demo-menu" class="mdc-menu-surface--anchor">
-                            ${createFunctionButton(
-                                {
-                                    id: SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, 
-                                    text: language.serviceOpenDropdownText, 
-                                    type: BUTTON_STANDARD, 
-                                    functionToCall: () => openSelectableDropdown(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, SERVICE_DROPDOWN_ID, SERVICE_TYPE_ATTRIBUTE_ID),
-                                    weight: "w-75"
-                                }
-                            )}
-                            ${createServiceDropdownMenu(SERVICE_DROPDOWN_ID)}
-                        </div>
-                    </div>
-                </div>
-
                 <div class="mt-4 row justify-content-center">
                     <div class="col align-self-center">
                         <span class="overall">${language.overall}</span>
@@ -202,12 +172,50 @@ export function getOrderFormHtml(){
                                 id: PALLET_OPEN_DIALOG_BUTTON_ID, 
                                 text: language.palletOpenDialogButtonText, 
                                 type: BUTTON_ROUNDED, 
-                                functionToCall: openPalletDialog
+                                functionToCall: openPalletDialog,
+                                weight: 'w-100'
                             }
                         )}
                     </div>
                 </div>
 
+                <div class="p-1 row justify-content-center">
+                    <div class="col align-self-center">
+                        ${createFormTextField(DELIVERY_DOCUMENT_TEXTFIELD_ID, language.deliveryDocumentPlaceHolder)}
+                    </div>
+                </div>
+
+                <div class="p-1 row justify-content-center">
+                    <div class="col align-self-center">
+                        ${createFormTextField(PACKAGE_QUANTITY_TEXTFIELD_ID, language.packageQuantityPlaceHolder)}
+                    </div>
+                </div>
+
+                <div class="p-1 row justify-content-center">
+                    <div class="col align-self-center">
+                        ${createFormTextField(ORDER_NOTES_TEXTAREA_ID, language.orderNotesPlaceHolder)}
+                    </div>
+                </div>
+
+                <div class="p-1 row justify-content-center">
+                    <div class="col align-self-center">
+                        <div id="demo-menu" class="mdc-menu-surface--anchor">
+                            ${createFunctionButton(
+                                {
+                                    id: SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID,
+                                    text: language.serviceOpenDropdownText,
+                                    type: BUTTON_STANDARD,
+                                    functionToCall: () => openSelectableDropdown(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, SERVICE_DROPDOWN_ID, SERVICE_TYPE_ATTRIBUTE_ID),
+                                    weight: "w-75"
+                                }
+                            )}
+                            ${createServiceDropdownMenu(SERVICE_DROPDOWN_ID)}
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
             </div>
             `;
 }

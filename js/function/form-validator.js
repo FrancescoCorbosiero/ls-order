@@ -1,4 +1,4 @@
-import { DELIVERY_DOCUMENT_TEXTFIELD_ID, EMAIL_TEXTFIELD_ID, MDC_TEXT_FIELD_CLASS, MOBILE_PHONE_REGEX, ONLY_NUMBERS_REGEX, ORDER_FORM_ID, PACKAGE_QUANTITY_TEXTFIELD_ID, PALLET_DATA_DIALOG_ID, PALLET_OPEN_DIALOG_BUTTON_ID, PHONE_TEXTFIELD_ID, POSTALCODE_REGEX, POSTALCODE_TEXTFIELD_ID, RECIPIENT_FORM_ID, REGISTRATION_FORM_ID, SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, SERVICE_TYPE_ATTRIBUTE_ID } from "../constant/costant.js";
+import { COMPANY_TEXTFIELD_ID, ADDRESS_TEXTFIELD_ID, PROVINCE_TEXTFIELD_ID, CITY_TEXTFIELD_ID, DELIVERY_DOCUMENT_TEXTFIELD_ID, EMAIL_TEXTFIELD_ID, MDC_TEXT_FIELD_CLASS, MOBILE_PHONE_REGEX, ONLY_NUMBERS_REGEX, ORDER_FORM_ID, PACKAGE_QUANTITY_TEXTFIELD_ID, PALLET_DATA_DIALOG_ID, PALLET_OPEN_DIALOG_BUTTON_ID, PHONE_TEXTFIELD_ID, POSTALCODE_REGEX, POSTALCODE_TEXTFIELD_ID, RECIPIENT_FORM_ID, REGISTRATION_FORM_ID, SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID, SERVICE_TYPE_ATTRIBUTE_ID } from "../constant/costant.js";
 import * as stringUtil from "../utility/string-util.js";
 import { getMdComponent } from "../components/data/component-data.js";
 import { playShakeErrorAnimation, playShakeTextfieldErrorAnimation } from "./ui-handler.js";
@@ -45,29 +45,46 @@ export function isRegistrationFormValid(){
 }
 
 export function isRecipientFormValid(){
-    let formNotValid = isFormNullOrEmpty(RECIPIENT_FORM_ID);
+    let formNotValid = true;
 
+    let company = getMdComponent(COMPANY_TEXTFIELD_ID);
+    let address = getMdComponent(ADDRESS_TEXTFIELD_ID);
+    let province = getMdComponent(PROVINCE_TEXTFIELD_ID);
+    let city = getMdComponent(CITY_TEXTFIELD_ID);
+    let phone = getMdComponent(PHONE_TEXTFIELD_ID)
+
+    formNotValid = isTextFieldNullOrEmpty(COMPANY_TEXTFIELD_ID, company);
+    if(formNotValid){
+        return false;
+    }
+    formNotValid = isTextFieldNullOrEmpty(ADDRESS_TEXTFIELD_ID, address);
+    if(formNotValid){
+        return false;
+    }
+    formNotValid = isTextFieldNullOrEmpty(PROVINCE_TEXTFIELD_ID, province);
+    if(formNotValid){
+        return false;
+    }
+    formNotValid = isTextFieldNullOrEmpty(CITY_TEXTFIELD_ID, city);
     if(formNotValid){
         return false;
     }
 
     formNotValid = isPostalCodeNotValid(POSTALCODE_TEXTFIELD_ID);
-
     if(formNotValid){
         return false;
     }
 
-    formNotValid = isPhoneNotValid(PHONE_TEXTFIELD_ID);
+    if(!stringUtil.isNullOrEmpty(phone.value)){
+        formNotValid = isPhoneNotValid(PHONE_TEXTFIELD_ID);
+    }
 
     if(formNotValid){
         return false;
     }
-
-
     return true;
 }
 
-//TODO: check
 export function isOrderFormValid(){
     //let formNotValid = isFormValidWithRegex(ORDER_FORM_ID, ONLY_NUMBERS_REGEX);
 
@@ -85,13 +102,13 @@ export function isOrderFormValid(){
     //REQUIRED
     let deliveryDocumentTextField = getMdComponent(DELIVERY_DOCUMENT_TEXTFIELD_ID);
     let deliveryDocumentNotValid = isTextFieldNullOrEmpty(DELIVERY_DOCUMENT_TEXTFIELD_ID, deliveryDocumentTextField);
+    if(deliveryDocumentNotValid){
+        playShakeErrorAnimation(DELIVERY_DOCUMENT_TEXTFIELD_ID);
+        return false;
+    }
 
     let serviceType = document.getElementById(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID).getAttribute(SERVICE_TYPE_ATTRIBUTE_ID);
     let serviceTypeNotSelected = !serviceType;
-    
-    if(serviceTypeNotSelected){
-        // playShakeErrorAnimation(SERVICE_OPEN_DROPDOWN_TYPE_BUTTON_ID);
-    }
 
     let noPalletInserted = userData.palletList.length > 0 ? false : true;
 
