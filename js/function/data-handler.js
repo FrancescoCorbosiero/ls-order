@@ -75,12 +75,14 @@ export function saveRecipientData(){
 }
 
 function saveUserInfo(){
+    let phone = getMdComponent(PHONE_TEXTFIELD_ID).value;
+
     userData.company = getMdComponent(COMPANY_TEXTFIELD_ID).value;
     userData.address = getMdComponent(ADDRESS_TEXTFIELD_ID).value;
     userData.province = getMdComponent(PROVINCE_TEXTFIELD_ID).value;
     userData.city = getMdComponent(CITY_TEXTFIELD_ID).value;
     userData.postalCode = getMdComponent(POSTALCODE_TEXTFIELD_ID).value;
-    userData.phone = getMdComponent(PHONE_TEXTFIELD_ID).value;
+    userData.phone = isNullOrEmpty(phone) ? null : phone;
 }
 
 function calculatPalletOverallWeight(palletWeight, palletQuantity){
