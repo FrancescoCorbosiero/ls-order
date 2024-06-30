@@ -84,7 +84,10 @@ export function getEmailConfirmationSentFormHtml(id, text){
 export function getNewRegistrationFormHtml(){
     return `<div id="${REGISTRATION_FORM_ID}" >
                 ${createFormTitleDiv(language.registrationFormText)}
-
+                <br>
+                <br>
+                <h1 style="font-size:20px"> B</h1>
+                <h1 style="font-size:15px"> Assicurati di aver inserito la mail corretta. Se sei già registrato NON è necessario ripetere la registrazione.</h1>
                 ${getUserDataFormHtml()}
             </div>
             `;
